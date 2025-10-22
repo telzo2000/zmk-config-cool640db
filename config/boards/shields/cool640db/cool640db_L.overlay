@@ -9,7 +9,7 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
-
+};
 
 &pinctrl {
     spi0_default: spi0_default {
