@@ -1,0 +1,22 @@
+if SHIELD_COOL640DB_R
+
+config ZMK_KEYBOARD_NAME
+    default "cool640db_R"
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_COOL640DB_L
+
+config ZMK_KEYBOARD_NAME
+    default "cool640db_L"
+
+config ZMK_SPLIT
+    default y
+
+endif
