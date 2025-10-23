@@ -1,5 +1,5 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include "Pyuron.dtsi"
+#include "cool640db.dtsi"
 
 &kscan0 {
         col-gpios

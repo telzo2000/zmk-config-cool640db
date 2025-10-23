@@ -1,5 +1,0 @@
-config SHIELD_PYURON_R
-    def_bool $(shields_list_contains,Pyuron_R)
-
-config SHIELD_PYURON_L
-    def_bool $(shields_list_contains,Pyuron_L)
