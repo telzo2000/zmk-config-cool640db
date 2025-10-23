@@ -1,7 +1,7 @@
-if SHIELD_COOL640DB_R
+if SHIELD_PYURON_R
 
 config ZMK_KEYBOARD_NAME
-    default "cool640db_R"
+    default "Pyuron_R"
 
 config ZMK_SPLIT
     default y
@@ -11,10 +11,10 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_COOL640DB_L
+if SHIELD_PYURON_L
 
 config ZMK_KEYBOARD_NAME
-    default "cool640db_L"
+    default "Pyuron_L"
 
 config ZMK_SPLIT
     default y

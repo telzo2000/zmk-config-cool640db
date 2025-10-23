@@ -1,5 +1,5 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include "cool640db.dtsi"
+#include "Pyuron.dtsi"
 
 &kscan0 {
         col-gpios
@@ -30,24 +30,19 @@
     };
 };
 
-&trackball_listener_L {
-    status = "okay";
-};
-
-&trackball_listener_R {
-    status = "okay";
-    device = <&trackball_R>;
+&trackball_split_L {
+    device = <&trackball_L>;
 };
 
 &spi0 {
     status = "okay";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    compatible = "nordic,nrf-spim";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    trackball_R: trackball_R@0 {
+    trackball_L: trackball_L@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;

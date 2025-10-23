@@ -1,14 +1,16 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include "cool640db.dtsi"
+#include "Pyuron.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>,
+                <&xiao_d 9 GPIO_ACTIVE_HIGH>,
+                <&xiao_d 8 GPIO_ACTIVE_HIGH>,
+                <&xiao_d 7 GPIO_ACTIVE_HIGH>,
+                <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
 &pinctrl {
@@ -30,19 +32,24 @@
     };
 };
 
-&trackball_split_L {
-    device = <&trackball_L>;
+&trackball_listener_L {
+    status = "okay";
+};
+
+&trackball_listener_R {
+    status = "okay";
+    device = <&trackball_R>;
 };
 
 &spi0 {
     status = "okay";
-    compatible = "nordic,nrf-spim";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    compatible = "nordic,nrf-spim";
 
-    trackball_L: trackball_L@0 {
+    trackball_R: trackball_R@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
