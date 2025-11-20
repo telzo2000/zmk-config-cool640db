@@ -54,6 +54,18 @@
             key-positions = <3 2>;
             layers = <0>;
         };
+
+        VOL_UP {
+            bindings = <&kp C_VOLUME_UP>;
+            key-positions = <5 6>;
+            layers = <1>;
+        };
+
+        VOL_DOWN {
+            bindings = <&kp K_VOLUME_DOWN>;
+            key-positions = <4 3>;
+            layers = <1>;
+        };
     };
 
     macros {
