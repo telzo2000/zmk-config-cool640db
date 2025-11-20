@@ -62,7 +62,7 @@
         };
 
         VOL_DOWN {
-            bindings = <&kp C_VOL_DN>;
+            bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <4 3>;
             layers = <1>;
         };
